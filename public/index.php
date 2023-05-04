@@ -5,15 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        td
+    </style>
 </head>
 <body>
     <table>
         <thead>
             <tr>
-                учасники
-            </tr>
-            <tr>
-                травень
+                <th>
+                    учасники
+                </th>
+                </th>
+                    травень
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -59,10 +64,10 @@
             </tr>
             <tr>
                 <td>
-                    Шатинська Альона
+                    <b>разом</b>
                 </td>
                 <td>
-                    1300
+                    <b>1300<b>
                 </td>
             </tr>
         </tbody>
