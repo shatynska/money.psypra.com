@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        td
+        td, th {
+            padding: 10px 20px;
+            border: 1px solid lightgrey;
+        }
     </style>
 </head>
 <body>
