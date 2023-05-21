@@ -13,6 +13,7 @@
     </style>
 </head>
 <body>
+    <h2>Баланс: 1200грн</h2>
     <table>
         <thead>
             <tr>
@@ -67,10 +68,82 @@
             </tr>
             <tr>
                 <td>
+                    Петришин Ольга
+                </td>
+                <td>
+                    200
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Наталя
+                </td>
+                <td>
+                    200
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Уляна
+                </td>
+                <td>
+                    200
+                </td>
+            </tr>
+            <tr>
+                <td>
                     <b>разом</b>
                 </td>
                 <td>
-                    <b>1300<b>
+                    <b>1900<b>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+        <table>
+        <thead>
+            <tr>
+                <th>
+                    дата
+                </th>
+                <th>
+                    сума
+                </th>
+                <th>
+                    призначення
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                     18.05
+                </td>
+                <td>
+                    400
+                </td>
+                <td>
+                    піца
+                </td>
+            </tr>
+            <tr>
+                <td>
+                     18.05
+                </td>
+                <td>
+                    300
+                </td>
+                <td>
+                    алкоголь
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>разом</b>
+                </td>
+                <td>
+                    <b>700<b>
                 </td>
             </tr>
         </tbody>
