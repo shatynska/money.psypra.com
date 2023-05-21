@@ -14,8 +14,8 @@
 </head>
 <body>
     <h2>Баланс: 1200грн</h2>
-    
-    <table style="margin-top: 40px;">
+
+    <table style="margin-bottom: 40px;">
         <thead>
             <tr>
                 <th>
@@ -26,6 +26,7 @@
                 </th>
             </tr>
         </thead>
+        <h3>Доходи</h3>
         <tbody>
             <tr>
                 <td>
@@ -101,8 +102,10 @@
             </tr>
         </tbody>
     </table>
+        
+    <h3>Витрати</h3>
 
-    <table style="margin-top: 40px;">
+    <table style="margin-bottom: 40px;">
         <thead>
             <tr>
                 <th>
