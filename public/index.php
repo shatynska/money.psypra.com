@@ -20,7 +20,7 @@
     </style>
 </head>
 <body>
-    <h2>Баланс: 1870грн</h2>
+    <h2>Баланс: 1930грн</h2>
 
     <table style="margin-bottom: 40px;">
         <thead>
