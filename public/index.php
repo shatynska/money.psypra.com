@@ -20,7 +20,7 @@
     </style>
 </head>
 <body>
-    <h2>Баланс: 2300грн</h2>
+    <h2>Баланс: 2670грн</h2>
 
     <table style="margin-bottom: 40px;">
         <thead>
@@ -285,6 +285,17 @@
             </tr>
         </thead>
         <tbody>
+            <tr>
+                <td>
+                     10.08
+                </td>
+                <td>
+                    430
+                </td>
+                <td>
+                    піца
+                </td>
+            </tr>
             <tr>
                 <td>
                      27.07
