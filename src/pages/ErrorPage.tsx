@@ -1,9 +1,13 @@
-import { FC } from 'react'
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 const ErrorPage: FC = () => {
   return (
-    <div>ErrorPage</div>
-  )
-}
+    <main>
+      <p>Сторінка не знайдена</p>
+      <Link to="/">На головну</Link>
+    </main>
+  );
+};
 
-export default ErrorPage
+export default ErrorPage;
