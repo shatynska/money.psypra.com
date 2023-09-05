@@ -11,6 +11,7 @@ const Header: FC = () => {
           <NavLink to="/transactions">Транзакції</NavLink>
         </nav>
       )}
+      {isAuth ? <button>Вийти</button> : <button>Увійти</button>}
     </header>
   );
 };
