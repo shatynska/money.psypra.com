@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  money_psypra_com_blue:
+    image: shatynska/money-psypra-com:latest
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.docker.network=traefik-public'
+      - 'traefik.http.routers.money_psypra_com_blue.entrypoints=https'
+      - 'traefik.http.routers.money_psypra_com_blue.rule=Host(`money.psypra.com`)'
+      - 'traefik.http.routers.money_psypra_com_blue.tls=true'
+      - 'traefik.http.services.money_psypra_com_blue.loadbalancer.server.port=5000'
+    ports:
+      - 5000:5173
+    networks:
+      - traefik-public
+      - dro-psypra-com
+
+networks:
+  traefik-public:
+    external: true
+  dro-psypra-com:
+    external: true
