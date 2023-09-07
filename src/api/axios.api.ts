@@ -2,8 +2,9 @@ import axios from 'axios';
 import { getTokenFromLocalStorage } from '../helpers/localstorage.helper';
 
 export const instance = axios.create({
-  baseURL: 'http://dro.psypra.com:3001/api',
+  baseURL: import.meta.env.VITE_API_BASE_URL,
   headers: {
     Authorization: 'Bearer ' + getTokenFromLocalStorage() || '',
   },
 });
+
