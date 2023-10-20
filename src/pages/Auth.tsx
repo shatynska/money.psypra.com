@@ -1,8 +1,8 @@
+import { AuthService } from '@/services';
 import React, { FC, useState } from 'react';
-import { AuthService } from '../services/auth.service';
 import { toast } from 'react-toastify';
 
-const Auth: FC = () => {
+export const Auth: FC = () => {
   const [isLogin, setIsLogin] = useState<boolean>(true);
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -52,5 +52,3 @@ const Auth: FC = () => {
     </div>
   );
 };
-
-export default Auth;
