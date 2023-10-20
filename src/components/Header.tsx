@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Header: FC = () => {
+export const Header: FC = () => {
   const isAuth = true;
   return (
     <header>
@@ -15,5 +15,3 @@ const Header: FC = () => {
     </header>
   );
 };
-
-export default Header;
