@@ -1,6 +1,14 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import { Auth, ErrorPage, Home, Layout, Transactions } from '@/pages';
+import {
+  Auth,
+  ErrorPage,
+  Expenses,
+  Fees,
+  Home,
+  Layout,
+  Members,
+} from '@/pages';
 
 export const router = createBrowserRouter([
   {
@@ -14,8 +22,16 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: 'transactions',
-        element: <Transactions />,
+        path: 'fees',
+        element: <Fees />,
+      },
+      {
+        path: 'expenses',
+        element: <Expenses />,
+      },
+      {
+        path: 'members',
+        element: <Members />,
       },
       {
         path: 'auth',
