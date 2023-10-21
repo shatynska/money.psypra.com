@@ -1,7 +1,8 @@
-import { CashBookService } from '@/services';
-import { CashBook as CashBookInterface } from '@/types';
 import { useQuery } from '@tanstack/react-query';
 import { FC } from 'react';
+
+import { CashBookService } from '@/services';
+import { CashBook as CashBookInterface } from '@/types';
 
 export const CashBook: FC = () => {
   const {

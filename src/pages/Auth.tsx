@@ -1,6 +1,7 @@
-import { AuthService } from '@/services';
 import React, { FC, useState } from 'react';
 import { toast } from 'react-toastify';
+
+import { AuthService } from '@/services';
 
 export const Auth: FC = () => {
   const [isLogin, setIsLogin] = useState<boolean>(true);

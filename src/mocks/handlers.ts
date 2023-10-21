@@ -1,4 +1,5 @@
 import { rest } from 'msw';
+
 import { CASH_BOOK_STUB } from './stubs';
 import { getAbsoluteUrl } from './utils';
 
