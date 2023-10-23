@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { FC } from 'react';
 
 import { CashBookService } from '@/services';
-import { CashBook as CashBookInterface } from '@/types';
+import { CashBookBriefly } from '@/types';
 
 export const CashBook: FC = () => {
   const {
@@ -12,7 +12,7 @@ export const CashBook: FC = () => {
   } = useQuery(['get current cash book'], () =>
     CashBookService.getCurrentCashBook(),
   );
-  const cashBook: CashBookInterface | undefined = response?.data;
+  const cashBook: CashBookBriefly | undefined = response?.data;
 
   return (
     <div>
@@ -21,27 +21,29 @@ export const CashBook: FC = () => {
         <span>Завантаження ...</span>
       ) : cashBook ? (
         <>
-          <h1>Баланс: {cashBook.cashBalance} грн </h1>
+          <h1>Баланс: {cashBook.cashBalance / 100} грн </h1>
           <h2>Внески</h2>
           <table>
+            <thead>
+              <tr>
+                <td>учасники</td>
+                {cashBook.feeMonths.map((feeMonth) => {
+                  return <td key={feeMonth}>{feeMonth}</td>;
+                })}
+              </tr>
+            </thead>
             <tbody>
-              <td>учасники</td>
-              <td>10</td>
-              <td>09</td>
-              <td>07</td>
-              <td>06</td>
-              <td>05</td>
+              {cashBook.membersWithMembershipFees.map((member) => {
+                return (
+                  <tr>
+                    <td>{member.memberName}</td>
+                    {member.membershipFees.map((membershipFee) => {
+                      return <td>{membershipFee.amount / 100}</td>;
+                    })}
+                  </tr>
+                );
+              })}
             </tbody>
-            {cashBook.members.map((member) => {
-              return (
-                <tr>
-                  <td>{member.name}</td>
-                  {member.membershipFees.map((membershipFee) => {
-                    return <td>{membershipFee.amount}</td>;
-                  })}
-                </tr>
-              );
-            })}
           </table>
         </>
       ) : (
