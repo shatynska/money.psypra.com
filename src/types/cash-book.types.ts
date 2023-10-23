@@ -1,26 +1,36 @@
-export interface CashBook {
-  id: string;
-  cashBookYear: string;
-  cashBalance: string;
-  members: Member[];
+export interface CashBookBriefly {
+  cashBookYear: number;
+  feeMonths: number[];
+  cashBalance: number;
+  membersWithMembershipFees: MemberWithMembershipFees[];
   expenses: Expense[];
+}
+
+export interface Expense {
+  id: string;
+  date: string;
+  amount: number;
+  details: string;
 }
 
 export interface Member {
   id: string;
   name: string;
-  membershipFees: MembershipFee[];
+  status: string;
 }
 
 export interface MembershipFee {
   id: string;
-  month: string;
-  amount: string;
+  date: string;
+  feeMonth: number;
+  memberName: string;
+  amount: number;
 }
 
-export interface Expense {
-  id: string;
-  date: Date;
-  amount: string;
-  details: string;
+export interface MembershipFeeBriefly
+  extends Pick<MembershipFee, 'feeMonth' | 'amount'> {}
+
+export interface MemberWithMembershipFees {
+  memberName: string;
+  membershipFees: MembershipFeeBriefly[];
 }
