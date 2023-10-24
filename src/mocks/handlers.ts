@@ -1,6 +1,6 @@
 import { rest } from 'msw';
 
-import { CASH_BOOK_STUB } from './stubs';
+import { CASH_BOOKS_STUB } from './stubs';
 import { getAbsoluteUrl } from './utils';
 
 export const handlers = [
@@ -30,7 +30,7 @@ export const handlers = [
     );
   }),
 
-  rest.get(getAbsoluteUrl('/cash-books/current'), (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(CASH_BOOK_STUB));
+  rest.get(getAbsoluteUrl('/cash-books'), (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(CASH_BOOKS_STUB));
   }),
 ];
