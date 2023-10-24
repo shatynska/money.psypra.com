@@ -1,1 +1,1 @@
-export * from './cash-book.stub';
+export * from './cash-books.stub';
