@@ -1,3 +1,7 @@
+export interface CashBooks {
+  cashBooksYears: number[];
+  currentCashBook: CashBookBriefly;
+}
 export interface CashBookBriefly {
   cashBookYear: number;
   feeMonths: number[];
