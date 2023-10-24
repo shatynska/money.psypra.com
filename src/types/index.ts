@@ -1,2 +1,2 @@
-export * from './cash-book.types';
+export * from './cash-books.types';
 export * from './user.types';
