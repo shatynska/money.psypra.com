@@ -1,7 +1,7 @@
 import { CashBooks } from '@/types';
 
 export const CASH_BOOKS_STUB: CashBooks = {
-  cashBooksYears: [2023, 2024],
+  cashBooksList: [2023, 2024],
   currentCashBook: {
     cashBookYear: 2023,
     cashBalance: 541000,
