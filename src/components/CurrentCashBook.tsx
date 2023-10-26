@@ -20,11 +20,13 @@ export const CurrentCashBook = ({
         </thead>
         <tbody>
           {cashBook.membersWithMembershipFees.map((member) => {
+            const fees = new Map(member.membershipFees);
             return (
               <tr>
                 <td>{member.name}</td>
-                {member.membershipFees.map((membershipFee) => {
-                  return <td>{membershipFee[1] / 100}</td>;
+                {cashBook.reportingMonths.map((month) => {
+                  const paidFee = fees.get(month);
+                  return <td key={month}>{paidFee ?? ''}</td>;
                 })}
               </tr>
             );
