@@ -3,9 +3,9 @@ export interface CashBooks {
   currentCashBook: CashBookBriefly;
 }
 export interface CashBookBriefly {
-  cashBookYear: number;
-  feeMonths: number[];
+  year: number;
   cashBalance: number;
+  reportingMonths: number[];
   membersWithMembershipFees: MemberWithMembershipFees[];
   expenses: Expense[];
 }
@@ -26,7 +26,7 @@ export interface Member {
 export interface MembershipFee {
   id: string;
   date: string;
-  feeMonth: number;
+  reportingMonth: number;
   memberName: string;
   amount: number;
 }
