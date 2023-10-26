@@ -31,10 +31,7 @@ export interface MembershipFee {
   amount: number;
 }
 
-export interface MembershipFeeBriefly
-  extends Pick<MembershipFee, 'feeMonth' | 'amount'> {}
-
 export interface MemberWithMembershipFees {
-  memberName: string;
-  membershipFees: MembershipFeeBriefly[];
+  name: string;
+  membershipFees: Array<[number, number]>;
 }
