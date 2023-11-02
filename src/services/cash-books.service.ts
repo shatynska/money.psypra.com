@@ -3,6 +3,6 @@ import { CashBooks } from '@/types';
 
 export const CashBooksService = {
   async getCashBooks() {
-    return await instance.get<CashBooks>('cash-books');
+    return await instance.get<CashBooks>('auth/cash-books');
   },
 };
