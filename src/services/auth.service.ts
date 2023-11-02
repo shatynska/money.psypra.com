@@ -1,5 +1,5 @@
 import { instance } from '../api/axios.api';
-import { ResponseUserData, UserData } from '../types/type';
+import { ResponseUserData, UserData } from '../types';
 
 export const AuthService = {
   async register(userData: UserData): Promise<ResponseUserData | undefined> {
