@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import App from '@/App.tsx';
 import '@/index.scss';
 
-if (import.meta.env.VITE_API_WITH_MSW) {
+if (process.env.NODE_ENV === 'development') {
   const { worker } = await import('@/mocks/browser');
   worker.start();
 }
