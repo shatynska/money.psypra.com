@@ -8,9 +8,15 @@ export default defineConfig({
     alias: [{ find: '@', replacement: resolve(__dirname, './src') }],
   },
   build: {
+    target: 'es2022',
     outDir: 'build',
     assetsDir: 'assets',
     emptyOutDir: true,
+  },
+  esbuild: {
+    supported: {
+      'top-level-await': true,
+    },
   },
   server: {
     host: true,
