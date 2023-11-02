@@ -4,13 +4,13 @@ import { CASH_BOOKS_STUB } from './stubs';
 import { getAbsoluteUrl } from './utils';
 
 export const handlers = [
-  rest.post('/login', (req, res, ctx) => {
+  rest.post('/login', (_req, res, ctx) => {
     sessionStorage.setItem('is-authenticated', 'true');
 
     return res(ctx.status(200));
   }),
 
-  rest.get('/user', (req, res, ctx) => {
+  rest.get('/user', (_req, res, ctx) => {
     const isAuthenticated = sessionStorage.getItem('is-authenticated');
 
     if (!isAuthenticated) {
@@ -30,7 +30,7 @@ export const handlers = [
     );
   }),
 
-  rest.get(getAbsoluteUrl('/cash-books'), (req, res, ctx) => {
+  rest.get(getAbsoluteUrl('/cash-books'), (_req, res, ctx) => {
     return res(ctx.status(200), ctx.json(CASH_BOOKS_STUB));
   }),
 ];
