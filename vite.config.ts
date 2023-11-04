@@ -5,7 +5,21 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   plugins: [react()],
   resolve: {
-    alias: [{ find: '@', replacement: resolve(__dirname, './src') }],
+    alias: [
+      { find: '@', replacement: resolve(__dirname, './src') },
+      { find: '~/app', replacement: resolve(__dirname, './src/1-app') },
+      { find: '~/pages', replacement: resolve(__dirname, './src/2-pages') },
+      { find: '~/widgets', replacement: resolve(__dirname, './src/3-widgets') },
+      {
+        find: '~/features',
+        replacement: resolve(__dirname, './src/4-features'),
+      },
+      {
+        find: '~/entities',
+        replacement: resolve(__dirname, './src/5-entities'),
+      },
+      { find: '~/shared', replacement: resolve(__dirname, './src/6-shared') },
+    ],
   },
   build: {
     target: 'es2022',
