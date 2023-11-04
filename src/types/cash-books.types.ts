@@ -1,10 +1,9 @@
-export interface CashBooks {
-  cashBooksList: number[];
-  currentCashBook: CashBookBriefly;
+export interface CashBalance {
+  value: number;
 }
-export interface CashBookBriefly {
+
+export interface CurrentCashBook {
   year: number;
-  cashBalance: number;
   reportingMonths: number[];
   membersWithMembershipFees: MemberWithMembershipFees[];
   expenses: Expense[];
