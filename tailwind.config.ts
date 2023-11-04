@@ -1,4 +1,5 @@
-/** @type {import('tailwindcss').Config} */
+import type { Config } from 'tailwindcss';
+import * as TailwindcssAnimate from 'tailwindcss-animate';
 import * as defaultTheme from 'tailwindcss/defaultTheme';
 
 export default {
@@ -59,12 +60,12 @@ export default {
       },
       keyframes: {
         'accordion-down': {
-          from: { height: 0 },
+          from: { height: '0' },
           to: { height: 'var(--radix-accordion-content-height)' },
         },
         'accordion-up': {
           from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: 0 },
+          to: { height: '0' },
         },
       },
       animation: {
@@ -73,5 +74,5 @@ export default {
       },
     },
   },
-  plugins: [import('tailwindcss-animate')],
-};
+  plugins: [TailwindcssAnimate],
+} satisfies Config;
