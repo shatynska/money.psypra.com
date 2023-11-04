@@ -5,7 +5,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import App from '@/App.tsx';
-import '@/index.scss';
+import '@/index.css';
 
 if (process.env.NODE_ENV === 'development') {
   const { worker } = await import('@/mocks/browser');
