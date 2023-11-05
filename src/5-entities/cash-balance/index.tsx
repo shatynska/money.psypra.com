@@ -1,7 +1,7 @@
 import { CashBooksService } from '@/services';
 import { useQuery } from '@tanstack/react-query';
 
-export const CashBalance = () => {
+export const CashBalanceEntity = () => {
   const {
     data: response,
     isLoading,
