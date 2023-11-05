@@ -1,14 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import {
-  Auth,
-  ErrorPage,
-  Expenses,
-  Fees,
-  Home,
-  Layout,
-  Members,
-} from './';
+import { AuthPage } from './auth';
+import { ErrorPage } from './error';
+import { ExpensesPage } from './expenses';
+import { FeesPage } from './fees';
+import { HomePage } from './home';
+import { Layout } from './Layout';
 
 export const router = createBrowserRouter([
   {
@@ -19,23 +16,19 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />,
+        element: <HomePage />,
       },
       {
         path: 'fees',
-        element: <Fees />,
+        element: <FeesPage />,
       },
       {
         path: 'expenses',
-        element: <Expenses />,
-      },
-      {
-        path: 'members',
-        element: <Members />,
+        element: <ExpensesPage />,
       },
       {
         path: 'auth',
-        element: <Auth />,
+        element: <AuthPage />,
       },
     ],
   },

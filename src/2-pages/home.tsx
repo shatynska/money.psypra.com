@@ -1,5 +1,5 @@
 import { CurrentCashBook } from '@/components';
 
-export const Home = () => {
+export const HomePage = () => {
   return <CurrentCashBook />;
 };
