@@ -1,17 +1,16 @@
 import { createBrowserRouter } from 'react-router-dom';
-
-import { AuthPage } from './auth';
-import { ErrorPage } from './error';
-import { ExpensesPage } from './expenses';
-import { FeesPage } from './fees';
-import { HomePage } from './home';
-import { Layout } from './Layout';
+import { AuthPage } from '~/pages/auth';
+import { ErrorPage } from '~/pages/error';
+import { ExpensesPage } from '~/pages/expenses';
+import { FeesPage } from '~/pages/fees';
+import { HomePage } from '~/pages/home';
+import { RootLayout } from './root-layout';
 
 export const router = createBrowserRouter([
   {
     id: 'root',
     path: '/',
-    element: <Layout />,
+    element: <RootLayout />,
     errorElement: <ErrorPage />,
     children: [
       {
