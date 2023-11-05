@@ -1,9 +1,10 @@
 import { NavLink } from 'react-router-dom';
+import { Logotype } from '~/shared/ui';
 
-export const Logo = () => {
+export const HeaderLogotype = () => {
   return (
     <NavLink className="h-8 md:text-lg" to="/">
-      Cash <span className="text-foreground">Book</span>
+      <Logotype />
     </NavLink>
   );
 };
