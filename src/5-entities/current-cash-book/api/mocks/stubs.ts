@@ -1,4 +1,4 @@
-import { CurrentCashBook } from '../../types';
+import type { CurrentCashBook } from '../types';
 
 export const CURRENT_CASH_BOOK_STUB: CurrentCashBook = {
   year: 2023,
