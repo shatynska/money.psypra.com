@@ -4,9 +4,9 @@
     "useDefineForClassFields": true,
     "lib": ["es2022", "DOM", "DOM.Iterable"],
     "module": "es2022",
+    "esModuleInterop": true,
     "skipLibCheck": true,
     "paths": {
-      "@/*": ["./src/*"],
       "~/app/*": ["./src/1-app/*"],
       "~/pages/*": ["./src/2-pages/*"],
       "~/widgets/*": ["./src/3-widgets/*"],
@@ -16,7 +16,7 @@
     },
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
