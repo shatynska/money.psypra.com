@@ -1,7 +1,3 @@
-export interface CashBalance {
-  value: number;
-}
-
 export interface CurrentCashBook {
   year: number;
   reportingMonths: number[];
