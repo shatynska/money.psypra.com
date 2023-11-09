@@ -1,4 +1,4 @@
-import { CashBalance } from '../../types';
+import type { CashBalance } from '../types';
 
 export const CASH_BALANCE_STUB: CashBalance = {
   value: 4200,
