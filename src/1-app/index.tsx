@@ -4,16 +4,11 @@ import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { checkMSWNecessary } from '~/shared/lib/msw/check-msw-necessary';
 import './index.css';
 import { router } from './router';
 
-if (
-  import.meta.env.VITE_API_WITH_MSW &&
-  process.env.NODE_ENV === 'development'
-) {
-  const { worker } = await import('~/shared/lib/msw/browser');
-  worker.start();
-}
+await checkMSWNecessary();
 
 const queryClient = new QueryClient();
 
