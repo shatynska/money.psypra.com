@@ -6,5 +6,5 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const getAbsoluteApiUrl = (path: string) => {
-  return `https://dro.psypra.com/api${path}`;
+  return `${import.meta.env.VITE_API_BASE_URL}${path}`;
 };
