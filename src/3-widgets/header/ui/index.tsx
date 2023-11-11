@@ -1,4 +1,5 @@
 import { CashBalanceEntity } from '~/entities/cash-balance';
+
 import { HeaderLogotype } from './logotype';
 
 export const HeaderWidget = () => {

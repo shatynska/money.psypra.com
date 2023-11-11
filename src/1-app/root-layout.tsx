@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router-dom';
+
 import { HeaderWidget } from '~/widgets/header';
 
 export const RootLayout = () => {
