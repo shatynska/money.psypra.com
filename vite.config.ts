@@ -1,9 +1,11 @@
-import react from '@vitejs/plugin-react';
 import { resolve } from 'node:path';
+
+import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
+import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), nodePolyfills({ include: ['http'] })],
   resolve: {
     alias: [
       { find: '~/app', replacement: resolve(__dirname, './src/1-app') },
