@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
-import { AuthService } from '@/services';
+import { UsersService } from '~/entities/users';
 
 export const AuthPage = () => {
   const [isLogin, setIsLogin] = useState<boolean>(true);
@@ -11,7 +11,7 @@ export const AuthPage = () => {
   const registerHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     try {
       e.preventDefault();
-      const data = await AuthService.register({ email, password });
+      const data = await UsersService.register({ email, password });
       if (data) {
         toast.success('Акаунт створено');
         setIsLogin(!isLogin);
