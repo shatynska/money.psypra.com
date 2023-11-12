@@ -1,11 +1,11 @@
 import { Outlet } from 'react-router-dom';
 
-import { HeaderWidget } from '~/widgets/header';
+import { Header } from '~/widgets/header';
 
 export const RootLayout = () => {
   return (
     <div className="container">
-      <HeaderWidget />
+      <Header />
       <main>
         <Outlet />
       </main>
