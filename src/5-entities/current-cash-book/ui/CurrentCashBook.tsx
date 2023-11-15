@@ -1,16 +1,15 @@
-import { CashBooksService } from '@/services';
-import { useQuery } from '@tanstack/react-query';
-import { MembershipFees } from '.';
+// eslint-disable-next-line import/no-internal-modules
+import { useCashBooksControllerGetCurrentCashBooks } from '~/shared/api/generated/hooks/cashBooksController';
+
+import { MembershipFees } from './MembershipFees';
 
 export const CurrentCashBook = () => {
   const {
     data: response,
     isLoading,
     error,
-  } = useQuery(['get current cash books'], () =>
-    CashBooksService.getCurrentCashBook(),
-  );
-  const currentCashBook = response?.data;
+  } = useCashBooksControllerGetCurrentCashBooks();
+  const currentCashBook = response;
 
   return (
     <>

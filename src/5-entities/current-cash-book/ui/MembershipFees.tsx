@@ -1,4 +1,3 @@
-import { MemberWithMembershipFees } from '@/types';
 import {
   Table,
   TableBody,
@@ -7,6 +6,8 @@ import {
   TableHeader,
   TableRow,
 } from '~/shared/ui';
+
+import { MemberWithMembershipFees } from '../types';
 
 export const MembershipFees = ({
   reportingMonths,
