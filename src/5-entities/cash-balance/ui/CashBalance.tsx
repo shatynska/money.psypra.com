@@ -1,13 +1,13 @@
-import { CashBooksService } from '@/services';
-import { useQuery } from '@tanstack/react-query';
+// eslint-disable-next-line import/no-internal-modules
+import { useCashBooksControllerGetCashBalance } from '~/shared/api/generated/hooks/cashBooksController';
 
-export const CashBalanceEntity = () => {
+export const CashBalance = () => {
   const {
     data: response,
     isLoading,
     error,
-  } = useQuery(['get cash balance'], () => CashBooksService.getCashBalance());
-  const cashBalance = response?.data;
+  } = useCashBooksControllerGetCashBalance();
+  const cashBalance = response;
 
   return (
     <>
