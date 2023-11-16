@@ -1,3 +1,4 @@
+export { HamburgerMenuIcon, ListIcon, TableIcon } from './icons';
 export { Logotype } from './logotype';
 export { QueryProvider } from './query-provider';
 export {
