@@ -8,7 +8,7 @@ module.exports = {
     '@feature-sliced',
     '@feature-sliced/eslint-config/rules/import-order/experimental',
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs', 'src/6-shared/api/generated'],
+  ignorePatterns: ['dist', '.eslintrc.cjs', 'src/shared/api/generated'],
   parser: '@typescript-eslint/parser',
   settings: {
     'import/resolver': {

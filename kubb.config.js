@@ -12,7 +12,7 @@ export default defineConfig({
     path: 'https://dro.psypra.com/api/swagger-json',
   },
   output: {
-    path: './src/6-shared/api/generated',
+    path: './src/shared/api/generated',
     clean: true,
   },
   hooks: {
@@ -37,8 +37,7 @@ export default defineConfig({
         },
       ],
       groupBy: { type: 'tag' },
-      client: './src/6-shared/api/client.ts',
-      infinite: {},
+      client: './src/shared/api/client.ts',
       framework: 'react',
     }),
     createSwaggerZod({

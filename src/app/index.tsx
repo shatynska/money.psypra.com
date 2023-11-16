@@ -4,7 +4,7 @@ import { RouterProvider } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
-import { QueryProvider } from '~/shared/ui';
+import { QueryProvider } from '../shared/ui';
 
 import './index.css';
 import { router } from './router';
