@@ -15,7 +15,8 @@ export const CashBalance = () => {
       {isLoading ? (
         <span>Завантаження ...</span>
       ) : cashBalance ? (
-        <section className="absolute right-0 top-0 flex h-32 w-32 flex-col items-center justify-center bg-foreground font-semibold text-background">
+        <section className="absolute right-0 -top-4 flex
+         h-32 w-32 flex-col items-center justify-center bg-foreground font-semibold text-background">
           <h2 className="opacity-70">баланс</h2>
           <div className="text-[32px] ">{cashBalance.value}</div>
         </section>
