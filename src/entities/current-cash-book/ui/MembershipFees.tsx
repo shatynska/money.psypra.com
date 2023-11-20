@@ -5,8 +5,9 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '../../../shared/ui';
+} from '~/shared/ui';
 
+import { convertMonthNumberToName } from '../lib';
 import { MemberWithMembershipFees } from '../types';
 
 export const MembershipFees = ({
@@ -28,7 +29,7 @@ export const MembershipFees = ({
             {reportingMonths.map((month) => {
               return (
                 <TableHead className="w-16" key={month}>
-                  {month}
+                 { convertMonthNumberToName(month) }
                 </TableHead>
               );
             })}
