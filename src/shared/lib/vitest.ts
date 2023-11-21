@@ -3,7 +3,7 @@ import { cleanup } from '@testing-library/react';
 import { afterEach, expect } from 'vitest';
 
 // eslint-disable-next-line import/no-internal-modules
-import { server } from '../msw/server';
+import { server } from './msw/server';
 
 expect.extend(matchers);
 
