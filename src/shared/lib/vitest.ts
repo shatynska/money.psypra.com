@@ -1,9 +1,11 @@
 import * as matchers from '@testing-library/jest-dom/matchers';
 import { cleanup } from '@testing-library/react';
+import { setupServer } from 'msw/node';
 import { afterEach, expect } from 'vitest';
 
-// eslint-disable-next-line import/no-internal-modules
-import { server } from './msw/server';
+import { handlers as mockHandlers } from '../api';
+
+const server = setupServer(...mockHandlers);
 
 expect.extend(matchers);
 
