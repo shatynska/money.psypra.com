@@ -2,15 +2,10 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 
-// eslint-disable-next-line import/no-internal-modules
-import { cashBooksControllerGetCashBalanceHandler } from '../../../shared/api/generated/msw/cashBooksController';
-// eslint-disable-next-line import/no-internal-modules
-import { server } from '../../../shared/lib/msw/server';
-import { QueryProvider } from '../../../shared/ui';
+import { getCashBooksControllerGetCashBalance200Response } from '~/shared/api';
+import { QueryProvider } from '~/shared/ui';
 
 import { CashBalance } from './CashBalance';
-
-server.use(cashBooksControllerGetCashBalanceHandler);
 
 beforeEach(() => {
   render(
@@ -21,5 +16,8 @@ beforeEach(() => {
 });
 
 test('test ui', async () => {
+  const res = getCashBooksControllerGetCashBalance200Response().value;
+
   expect(screen.getByText(/Завантаження/i)).toBeInTheDocument();
+  expect(await screen.findByText(res)).toBeInTheDocument();
 });
