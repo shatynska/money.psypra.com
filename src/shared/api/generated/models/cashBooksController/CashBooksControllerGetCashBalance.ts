@@ -1,2 +1,4 @@
+import type { CashBalanceResponseDto } from '../CashBalanceResponseDto';
 
-export type CashBooksControllerGetCashBalanceQueryResponse = any | null;
+export type CashBooksControllerGetCashBalanceQueryResponse =
+  CashBalanceResponseDto;

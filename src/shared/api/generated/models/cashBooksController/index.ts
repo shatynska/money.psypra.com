@@ -1,3 +1,2 @@
-export * from "./CashBooksControllerGetCashBalance";
-export * from "./CashBooksControllerGetCurrentCashBooks";
-
+export * from './CashBooksControllerGetCashBalance';
+export * from './CashBooksControllerGetCurrentCashBooks';

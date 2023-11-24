@@ -1,5 +1,5 @@
-import type { LoginDto } from "../LoginDto";
-import type { LoginResponseDto } from "../LoginResponseDto";
+import type { LoginResponseDto } from '../LoginResponseDto';
+import type { LoginDto } from '../LoginDto';
 
 export type AuthControllerLogin400 = any;
 

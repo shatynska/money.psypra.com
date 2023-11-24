@@ -1,5 +1,7 @@
-import { z } from "zod";
+import { z } from 'zod';
 
-import { userResponseDtoSchema } from "../userResponseDtoSchema";
+import { userResponseDtoSchema } from '../userResponseDtoSchema';
 
-export const usersControllerUpdateUserMutationResponseSchema = z.lazy(() => userResponseDtoSchema).schema;
+export const usersControllerUpdateUserMutationResponseSchema = z.lazy(
+  () => userResponseDtoSchema,
+).schema;

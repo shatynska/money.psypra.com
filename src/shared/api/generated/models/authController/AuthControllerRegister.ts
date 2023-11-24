@@ -1,5 +1,5 @@
-import type { RegisterDto } from "../RegisterDto";
-import type { UserResponseDto } from "../UserResponseDto";
+import type { UserResponseDto } from '../UserResponseDto';
+import type { RegisterDto } from '../RegisterDto';
 
 export type AuthControllerRegister400 = any;
 

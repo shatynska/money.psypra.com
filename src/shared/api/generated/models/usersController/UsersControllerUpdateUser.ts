@@ -1,3 +1,3 @@
-import type { UserResponseDto } from "../UserResponseDto";
+import type { UserResponseDto } from '../UserResponseDto';
 
 export type UsersControllerUpdateUserMutationResponse = UserResponseDto;

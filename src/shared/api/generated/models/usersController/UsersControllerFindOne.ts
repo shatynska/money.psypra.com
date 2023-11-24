@@ -1,10 +1,10 @@
-import type { UserResponseDto } from "../UserResponseDto";
+import type { UserResponseDto } from '../UserResponseDto';
 
 export type UsersControllerFindOnePathParams = {
-    /**
-     * @type string
-    */
-    idOrEmail: string;
+  /**
+   * @type string
+   */
+  idOrEmail: string;
 };
 
 export type UsersControllerFindOneQueryResponse = UserResponseDto;

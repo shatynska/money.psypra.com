@@ -1,4 +1,7 @@
-import { z } from "zod";
+import { z } from 'zod';
 
+import { cashBalanceResponseDtoSchema } from '../cashBalanceResponseDtoSchema';
 
-export const cashBooksControllerGetCashBalanceQueryResponseSchema = z.any();
+export const cashBooksControllerGetCashBalanceQueryResponseSchema = z.lazy(
+  () => cashBalanceResponseDtoSchema,
+).schema;

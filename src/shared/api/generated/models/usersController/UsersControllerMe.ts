@@ -1,4 +1,3 @@
-
 export type UsersControllerMeQueryResponse = {
-    [key: string]: any;
+  [key: string]: any;
 };
