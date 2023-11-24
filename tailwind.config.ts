@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss';
-import * as TailwindcssAnimate from 'tailwindcss-animate';
 import * as defaultTheme from 'tailwindcss/defaultTheme';
+import * as TailwindcssAnimate from 'tailwindcss-animate';
 
 export default {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx,html}'],
