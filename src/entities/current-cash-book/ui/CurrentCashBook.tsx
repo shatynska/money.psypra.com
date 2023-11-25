@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-internal-modules
-import { useCashBooksControllerGetCurrentCashBooks } from '../../../shared/api/generated/hooks/cashBooksController';
+import { useCashBooksControllerGetCurrentCashBooks } from '~/shared/api/generated/hooks/cashBooksController';
 
 import { MembershipFees } from './MembershipFees';
 

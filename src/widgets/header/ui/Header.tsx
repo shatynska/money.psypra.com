@@ -1,4 +1,4 @@
-import { CashBalance } from '../../../entities/cash-balance';
+import { CashBalance } from '~/entities/cash-balance';
 
 import { HeaderLogotype } from './HeaderLogotype';
 

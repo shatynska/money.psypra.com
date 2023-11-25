@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-internal-modules
-import { useCashBooksControllerGetCashBalance } from '../../../shared/api/generated/hooks/cashBooksController';
+import { useCashBooksControllerGetCashBalance } from '~/shared/api/generated/hooks/cashBooksController';
 
 export const CashBalance = () => {
   const {

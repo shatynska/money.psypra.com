@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
-import { UsersService } from '../entities/users';
+import { UsersService } from '~/entities/users';
 
 export const AuthPage = () => {
   const [isLogin, setIsLogin] = useState<boolean>(true);
