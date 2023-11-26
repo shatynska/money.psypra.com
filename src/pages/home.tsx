@@ -1,5 +1,5 @@
 import { CurrentCashBook } from '~/entities/current-cash-book';
 
-export const HomePage = () => {
+export function HomePage() {
   return <CurrentCashBook />;
-};
+}

@@ -3,12 +3,12 @@ import { toast } from 'react-toastify';
 
 import { UsersService } from '~/entities/users';
 
-export const AuthPage = () => {
+export function AuthPage() {
   const [isLogin, setIsLogin] = useState<boolean>(true);
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
-  const registerHandler = async (e: React.FormEvent<HTMLFormElement>) => {
+  async function registerHandler(e: React.FormEvent<HTMLFormElement>) {
     try {
       e.preventDefault();
       const data = await UsersService.register({ email, password });
@@ -21,9 +21,10 @@ export const AuthPage = () => {
       const errorMessage = error.response?.data.message;
       toast.error(errorMessage.toString());
     }
-  };
+  }
 
-  const loginHandler = async () => {};
+  async function loginHandler() {}
+
   return (
     <div>
       <h1>{isLogin ? 'Вхід' : 'Реєстрація'}</h1>
@@ -52,4 +53,4 @@ export const AuthPage = () => {
       )}
     </div>
   );
-};
+}

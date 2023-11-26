@@ -3,7 +3,7 @@ import { useCashBooksControllerGetCurrentCashBooks } from '~/shared/api/generate
 
 import { MembershipFees } from './MembershipFees';
 
-export const CurrentCashBook = () => {
+export function CurrentCashBook() {
   const {
     data: response,
     isLoading,
@@ -30,4 +30,4 @@ export const CurrentCashBook = () => {
       )}
     </>
   );
-};
+}

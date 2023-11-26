@@ -10,13 +10,13 @@ import {
 import { convertMonthNumberToName } from '../lib';
 import { MemberWithMembershipFees } from '../types';
 
-export const MembershipFees = ({
+export function MembershipFees({
   reportingMonths,
   membersWithMembershipFees,
 }: {
   reportingMonths: number[];
   membersWithMembershipFees: MemberWithMembershipFees[];
-}) => {
+}) {
   return (
     <section className="relative top-32 bg-background">
       <section className="relative -top-12 left-8 flex h-24 w-24 flex-col items-center justify-center bg-foreground font-semibold text-background">
@@ -29,7 +29,7 @@ export const MembershipFees = ({
             {reportingMonths.map((month) => {
               return (
                 <TableHead className="w-16" key={month}>
-                 { convertMonthNumberToName(month) }
+                  {convertMonthNumberToName(month)}
                 </TableHead>
               );
             })}
@@ -56,4 +56,4 @@ export const MembershipFees = ({
       </Table>
     </section>
   );
-};
+}
