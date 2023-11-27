@@ -6,7 +6,7 @@ import { ExpensesPage } from '~/pages/expenses';
 import { FeesPage } from '~/pages/fees';
 import { HomePage } from '~/pages/home';
 
-import { RootLayout } from './root-layout';
+import { RootLayout } from './RootLayout';
 
 export const router = createBrowserRouter([
   {

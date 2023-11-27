@@ -1,6 +1,6 @@
 export { HamburgerMenuIcon, ListIcon, TableIcon } from './icons';
-export { Logotype } from './logotype';
-export { QueryProvider } from './query-provider';
+export { Logotype } from './Logotype';
+export { QueryProvider } from './QueryProvider';
 export {
   Table,
   TableBody,
@@ -10,4 +10,4 @@ export {
   TableHead,
   TableHeader,
   TableRow,
-} from './table';
+} from './Table';
