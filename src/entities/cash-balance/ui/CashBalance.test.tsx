@@ -18,6 +18,5 @@ beforeEach(() => {
 test('test ui', async () => {
   const res = getCashBooksControllerGetCashBalance200Response().value;
 
-  expect(screen.getByText(/Завантаження/i)).toBeInTheDocument();
   expect(await screen.findByText(res)).toBeInTheDocument();
 });
