@@ -1,6 +1,8 @@
 import { SVGProps } from 'react';
 
-export function ListIcon(props: SVGProps<SVGSVGElement>) {
+type Props = SVGProps<SVGSVGElement>;
+
+export function ListIcon(props: Props) {
   return (
     <svg
       width="40"

@@ -1,6 +1,8 @@
 import { SVGProps } from 'react';
 
-export function HamburgerMenuIcon(props: SVGProps<SVGSVGElement>) {
+type Props = SVGProps<SVGSVGElement>;
+
+export function HamburgerMenuIcon(props: Props) {
   return (
     <svg
       width="32"

@@ -10,13 +10,14 @@ import {
 import { convertMonthNumberToName } from '../lib';
 import { MemberWithMembershipFees } from '../types';
 
-export function MembershipFees({
-  reportingMonths,
-  membersWithMembershipFees,
-}: {
+type Props = {
   reportingMonths: number[];
   membersWithMembershipFees: MemberWithMembershipFees[];
-}) {
+};
+
+export function MembershipFees(props: Props) {
+  const { reportingMonths, membersWithMembershipFees } = props;
+
   return (
     <section className="relative top-32 bg-background">
       <section className="relative -top-12 left-8 flex h-24 w-24 flex-col items-center justify-center bg-foreground font-semibold text-background">

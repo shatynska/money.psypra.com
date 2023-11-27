@@ -1,6 +1,8 @@
 import { SVGProps } from 'react';
 
-export function TableIcon(props: SVGProps<SVGSVGElement>) {
+type Props = SVGProps<SVGSVGElement>;
+
+export function TableIcon(props: Props) {
   return (
     <svg
       width="40"
