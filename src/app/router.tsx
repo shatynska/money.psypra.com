@@ -1,12 +1,13 @@
+import { lazily } from 'react-lazily';
 import { createBrowserRouter } from 'react-router-dom';
 
-import { AuthPage } from '~/pages/auth';
-import { ErrorPage } from '~/pages/error';
-import { ExpensesPage } from '~/pages/expenses';
-import { FeesPage } from '~/pages/fees';
-import { HomePage } from '~/pages/home';
-
 import { RootLayout } from './RootLayout';
+
+const { HomePage } = lazily(() => import('~/pages/home'));
+const { ErrorPage } = lazily(() => import('~/pages/error'));
+const { ExpensesPage } = lazily(() => import('~/pages/expenses'));
+const { FeesPage } = lazily(() => import('~/pages/fees'));
+const { AuthPage } = lazily(() => import('~/pages/auth'));
 
 export const router = createBrowserRouter([
   {
