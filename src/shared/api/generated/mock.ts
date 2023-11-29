@@ -4,10 +4,7 @@
  */
 /* eslint-disable */
 /* tslint:disable */
-import { setupWorker, rest } from 'msw';
-import { faker } from '@faker-js/faker';
-
-faker.seed(1);
+import { rest, setupWorker } from 'msw';
 
 const baseURL = 'https://dro.psypra.com';
 const MAX_ARRAY_LENGTH = 20;
