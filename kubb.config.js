@@ -30,6 +30,7 @@ export default defineConfig({
       groupBy: { type: 'tag' },
       client: './src/shared/api/client.ts',
       framework: 'react',
+      // TODO Check readiness of suspense option for v.5
     }),
     createSwaggerZod({
       output: './zod',
