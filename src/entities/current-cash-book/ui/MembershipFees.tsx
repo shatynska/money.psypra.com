@@ -1,14 +1,14 @@
+import { MemberWithMembershipFees } from '~/shared/api';
 import {
   Table,
   TableBody,
-  TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from '~/shared/ui';
 
-import { convertMonthNumberToName } from '../lib';
-import { MemberWithMembershipFees } from '../types';
+import { MemberTableRow } from './MemberTableRow';
+import { ReportingMonthTableHead } from './ReportingMonthTableHead';
 
 type Props = {
   reportingMonths: number[];
@@ -25,33 +25,16 @@ export function MembershipFees(props: Props) {
       </section>
       <Table className="mx-4">
         <TableHeader>
-          <TableRow>
-            <TableHead className="w-32"></TableHead>
-            {reportingMonths.map((month) => {
-              return (
-                <TableHead className="w-16" key={month}>
-                  {convertMonthNumberToName(month)}
-                </TableHead>
-              );
+          <TableRow className="text-sm">
+            <TableHead></TableHead>
+            {reportingMonths.map((month, index) => {
+              return <ReportingMonthTableHead month={month} index={index} />;
             })}
           </TableRow>
         </TableHeader>
         <TableBody>
           {membersWithMembershipFees.map((member) => {
-            const fees = new Map(member.membershipFees);
-            return (
-              <TableRow key={member.name}>
-                <TableCell>{member.name}</TableCell>
-                {reportingMonths.map((month) => {
-                  const paidFee = fees.get(month);
-                  return (
-                    <TableCell key={member.name + month}>
-                      {paidFee ?? ''}
-                    </TableCell>
-                  );
-                })}
-              </TableRow>
-            );
+            return <MemberTableRow member={member} months={reportingMonths} />;
           })}
         </TableBody>
       </Table>
