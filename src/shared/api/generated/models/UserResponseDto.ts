@@ -7,7 +7,7 @@ export type UserResponseDtoRoles =
 export type UserResponseDto = {
   /**
    * @type string
-   * @example '0c287617-9f36-489e-ba72-d462777987e9'
+   * @example c0298617-9f36-489e-ba72-d462777987e9
    */
   id: string;
   /**
@@ -16,8 +16,8 @@ export type UserResponseDto = {
    */
   email: string;
   /**
-   * @type array
+   * @type string
    * @example USER
    */
-  roles: UserResponseDtoRoles[];
+  roles: UserResponseDtoRoles;
 };

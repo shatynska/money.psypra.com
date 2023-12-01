@@ -1,1 +1,4 @@
-export type CashBooksControllerGetCurrentCashBooksQueryResponse = any | null;
+import type { CurrentCashBookResponseDto } from '../CurrentCashBookResponseDto';
+
+export type CashBooksControllerGetCurrentCashBooksQueryResponse =
+  CurrentCashBookResponseDto;
