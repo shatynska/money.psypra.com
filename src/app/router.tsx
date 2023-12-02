@@ -1,5 +1,8 @@
+import { Suspense } from 'react';
 import { lazily } from 'react-lazily';
 import { createBrowserRouter } from 'react-router-dom';
+
+import { Skeleton } from '~/shared/ui';
 
 import { RootLayout } from './RootLayout';
 
@@ -13,7 +16,11 @@ export const router = createBrowserRouter([
   {
     id: 'root',
     path: '/',
-    element: <RootLayout />,
+    element: (
+      <Suspense fallback={<Skeleton />}>
+        <RootLayout />
+      </Suspense>
+    ),
     errorElement: <ErrorPage />,
     children: [
       {
