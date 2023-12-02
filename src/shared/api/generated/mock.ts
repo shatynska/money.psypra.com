@@ -55,15 +55,18 @@ export const handlers = [
     return res(...resultArray[next() % resultArray.length]);
   }),
   rest.get(`${baseURL}/api/cash-books/current`, (_, res, ctx) => {
-    const resultArray = [[ctx.status(200), ctx.json(null)]];
+    const resultArray = [
+      [
+        ctx.status(200),
+        ctx.json(getCashBooksControllerGetCurrentCashBooks200Response()),
+      ],
+    ];
 
     return res(...resultArray[next() % resultArray.length]);
   }),
   rest.post(`${baseURL}/api/auth/register`, (_, res, ctx) => {
     const resultArray = [
       [ctx.status(201), ctx.json(getAuthControllerRegister201Response())],
-      [ctx.status(400), ctx.json(getAuthControllerRegister400Response())],
-      [ctx.status(409), ctx.json(getAuthControllerRegister409Response())],
     ];
 
     return res(...resultArray[next() % resultArray.length]);
@@ -71,8 +74,6 @@ export const handlers = [
   rest.post(`${baseURL}/api/auth/login`, (_, res, ctx) => {
     const resultArray = [
       [ctx.status(201), ctx.json(getAuthControllerLogin201Response())],
-      [ctx.status(400), ctx.json(getAuthControllerLogin400Response())],
-      [ctx.status(401), ctx.json(getAuthControllerLogin401Response())],
     ];
 
     return res(...resultArray[next() % resultArray.length]);
@@ -106,7 +107,7 @@ export const handlers = [
 
 export function getUsersControllerFindOne200Response() {
   return {
-    id: "'0c287617-9f36-489e-ba72-d462777987e9'",
+    id: 'c0298617-9f36-489e-ba72-d462777987e9',
     email: 'test@gmail.com',
     roles: ['USER'],
   };
@@ -118,7 +119,7 @@ export function getUsersControllerMe200Response() {
 
 export function getUsersControllerUpdateUser200Response() {
   return {
-    id: "'0c287617-9f36-489e-ba72-d462777987e9'",
+    id: 'c0298617-9f36-489e-ba72-d462777987e9',
     email: 'test@gmail.com',
     roles: ['USER'],
   };
@@ -126,24 +127,38 @@ export function getUsersControllerUpdateUser200Response() {
 
 export function getCashBooksControllerGetCashBalance200Response() {
   return {
-    value: '5600',
+    value: 8420,
+  };
+}
+
+export function getCashBooksControllerGetCurrentCashBooks200Response() {
+  return {
+    reportingMonths: [2, 3, 4, 5, 7, 8, 9, 10, 11],
+    membersWithMembershipFees: [
+      {
+        lastName: 'Зварицький',
+        firstName: 'Олег',
+        membershipFees: { reportingMonth: 3, amount: 350 },
+      },
+      {
+        lastName: 'Денисюк',
+        firstName: 'Жоржина',
+        membershipFees: { reportingMonth: 2, amount: 150 },
+      },
+    ],
+    expenses: [
+      { date: '2022-11-27', amount: 385, details: 'Піца' },
+      { date: '2022-12-13', amount: 520, details: 'Алкоголь' },
+    ],
   };
 }
 
 export function getAuthControllerRegister201Response() {
   return {
-    id: "'0c287617-9f36-489e-ba72-d462777987e9'",
+    id: 'c0298617-9f36-489e-ba72-d462777987e9',
     email: 'test@gmail.com',
     roles: ['USER'],
   };
-}
-
-export function getAuthControllerRegister400Response() {
-  return null;
-}
-
-export function getAuthControllerRegister409Response() {
-  return null;
 }
 
 export function getAuthControllerLogin201Response() {
@@ -151,14 +166,6 @@ export function getAuthControllerLogin201Response() {
     accessToken:
       'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjMjg3NjE3LTlmMzYtNDg5ZS1iYTcyLWQ0NjI3Nzc5ODdlOSIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iXSwiaWF0IjoxNjk1OTI4NTc5LCJleHAiOjE2OTYwMTQ5Nzl9.VblvTacY29lbiE_IZl2bb6itQ8mCsgf4TZrk2bmdXnU',
   };
-}
-
-export function getAuthControllerLogin400Response() {
-  return null;
-}
-
-export function getAuthControllerLogin401Response() {
-  return null;
 }
 
 // This configures a Service Worker with the given request handlers.
