@@ -9,7 +9,7 @@
     "test": "vitest",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "mock": "npx msw-auto-mock https://dro.psypra.com/api/swagger-json -o ./src/shared/api/generated/mock.ts --base-url https://dro.psypra.com",
+    "mock": "npx msw-auto-mock https://dro.psypra.com/api/swagger-json -o ./src/shared/api/generated/mock.ts --base-url https://dro.psypra.com --codes 200,201",
     "generate": "npm run mock && kubb generate --config kubb.config.js",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
