@@ -26,7 +26,14 @@ export function MemberTableRow(props: Props) {
       </TableCell>
       {months.map((month, index) => {
         const paidFee = fees.get(month);
-        return <FeeTableCell month={month} index={index} paidFee={paidFee} />;
+        return (
+          <FeeTableCell
+            key={month}
+            month={month}
+            index={index}
+            paidFee={paidFee}
+          />
+        );
       })}
     </TableRow>
   );

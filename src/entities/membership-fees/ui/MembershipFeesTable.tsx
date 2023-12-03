@@ -19,18 +19,30 @@ export function MembershipFeesTable(props: Props) {
   const { reportingMonths, membersWithMembershipFees } = props;
 
   return (
-    <Table className="mx-4">
+    <Table>
       <TableHeader>
         <TableRow className="text-sm">
           <TableHead></TableHead>
           {reportingMonths.map((month, index) => {
-            return <ReportingMonthTableHead month={month} index={index} />;
+            return (
+              <ReportingMonthTableHead
+                key={month}
+                month={month}
+                index={index}
+              />
+            );
           })}
         </TableRow>
       </TableHeader>
       <TableBody>
         {membersWithMembershipFees.map((member) => {
-          return <MemberTableRow member={member} months={reportingMonths} />;
+          return (
+            <MemberTableRow
+              key={member.lastName}
+              member={member}
+              months={reportingMonths}
+            />
+          );
         })}
       </TableBody>
     </Table>

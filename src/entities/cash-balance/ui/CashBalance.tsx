@@ -11,7 +11,7 @@ export function CashBalance() {
   //TODO Add error boundary fallback
 
   return (
-    <section className="absolute -top-4 right-0 flex h-32 w-32 flex-col items-center justify-center bg-foreground font-semibold text-background">
+    <section className="absolute right-0 flex h-32 w-32 flex-col items-center justify-center bg-foreground font-semibold text-background">
       <h2 className="opacity-70">баланс</h2>
       <ErrorBoundary fallback={null}>
         <Suspense fallback={<Skeleton />}>

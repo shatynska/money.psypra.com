@@ -4,7 +4,7 @@ import { Logotype } from '~/shared/ui';
 
 export function HeaderLogotype() {
   return (
-    <NavLink className="h-8 text-lg" to="/">
+    <NavLink className="mt-4 h-8 text-lg" to="/">
       <Logotype />
     </NavLink>
   );
