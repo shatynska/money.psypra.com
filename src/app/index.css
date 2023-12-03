@@ -42,6 +42,6 @@
   }
 
   body {
-    @apply m-auto flex max-w-screen-lg flex-col justify-center bg-primary text-foreground;
+    @apply bg-primary text-foreground;
   }
 }

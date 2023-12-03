@@ -4,7 +4,7 @@ import { Header } from '~/widgets/header';
 
 export function RootLayout() {
   return (
-    <div>
+    <div className="m-auto flex max-w-screen-lg flex-col justify-center">
       <Header />
       <main>
         <Outlet />
