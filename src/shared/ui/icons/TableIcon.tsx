@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-props-no-spreading */
+
 import { SVGProps } from 'react';
 
 type Props = SVGProps<SVGSVGElement>;

@@ -1,3 +1,8 @@
+/* eslint-disable react/function-component-definition */
+/* eslint-disable react/jsx-no-constructed-context-values */
+/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable react/jsx-props-no-spreading */
+
 import * as LabelPrimitive from '@radix-ui/react-label';
 import { Slot } from '@radix-ui/react-slot';
 import * as React from 'react';
@@ -39,6 +44,14 @@ const FormField = <
   );
 };
 
+type FormItemContextValue = {
+  id: string;
+};
+
+const FormItemContext = React.createContext<FormItemContextValue>(
+  {} as FormItemContextValue,
+);
+
 const useFormField = () => {
   const fieldContext = React.useContext(FormFieldContext);
   const itemContext = React.useContext(FormItemContext);
@@ -61,14 +74,6 @@ const useFormField = () => {
     ...fieldState,
   };
 };
-
-type FormItemContextValue = {
-  id: string;
-};
-
-const FormItemContext = React.createContext<FormItemContextValue>(
-  {} as FormItemContextValue,
-);
 
 const FormItem = React.forwardRef<
   HTMLDivElement,
@@ -173,6 +178,5 @@ export {
   FormItem,
   FormLabel,
   FormMessage,
-  // eslint-disable-next-line react-refresh/only-export-components
   useFormField,
 };

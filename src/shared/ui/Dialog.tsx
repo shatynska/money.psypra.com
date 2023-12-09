@@ -1,3 +1,6 @@
+/* eslint-disable react/function-component-definition */
+/* eslint-disable react/jsx-props-no-spreading */
+
 'use client';
 
 import * as DialogPrimitive from '@radix-ui/react-dialog';

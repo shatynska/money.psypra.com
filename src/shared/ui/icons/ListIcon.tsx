@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-props-no-spreading */
+
 import { SVGProps } from 'react';
 
 type Props = SVGProps<SVGSVGElement>;
@@ -13,9 +15,9 @@ export function ListIcon(props: Props) {
       {...props}
     >
       <g>
-        <path d="M16 14.25H30" stroke="#202222" stroke-linecap="round" />
-        <path d="M16 20.25H30" stroke="#202222" stroke-linecap="round" />
-        <path d="M16 26.25H30" stroke="#202222" stroke-linecap="round" />
+        <path d="M16 14.25H30" stroke="#202222" strokeLinecap="round" />
+        <path d="M16 20.25H30" stroke="#202222" strokeLinecap="round" />
+        <path d="M16 26.25H30" stroke="#202222" strokeLinecap="round" />
         <circle cx="10.75" cy="14" r="0.75" fill="#202222" />
         <circle cx="10.75" cy="20" r="0.75" fill="#202222" />
         <circle cx="10.75" cy="26" r="0.75" fill="#202222" />
