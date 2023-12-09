@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import { expect, test } from 'vitest';
+import { beforeEach, expect, test } from 'vitest';
 
 import { getCashBooksControllerGetCashBalance200Response } from '~/shared/api';
 import { QueryProvider } from '~/shared/ui';

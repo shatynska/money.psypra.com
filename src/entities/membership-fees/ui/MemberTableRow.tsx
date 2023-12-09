@@ -9,11 +9,11 @@ type Props = {
 };
 
 export function MemberTableRow(props: Props) {
-  const { firstName, lastName, membershipFees } = props.member;
-  const months = props.months;
+  const { member, months } = props;
+  const { firstName, lastName, membershipFees } = member;
 
   const fees = new Map();
-  membershipFees.map((fee) => {
+  membershipFees.forEach((fee) => {
     fees.set(fee.reportingMonth, fee.amount);
   });
 

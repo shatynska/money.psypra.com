@@ -1,3 +1,4 @@
+import { cn } from '~/shared/lib';
 import { TableCell } from '~/shared/ui';
 
 type Props = {
@@ -11,9 +12,11 @@ export function FeeTableCell(props: Props) {
 
   return (
     <TableCell
-      className={
-        index === 0 ? 'opacity-100' : index === 1 ? 'opacity-70' : 'opacity-40'
-      }
+      className={cn(
+        'p-1 opacity-40',
+        { 'opacity-100': index === 0 },
+        { 'opacity-70': index === 1 },
+      )}
       key={month}
     >
       {paidFee ?? ''}

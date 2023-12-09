@@ -22,7 +22,7 @@ export function MembershipFeesTable(props: Props) {
     <Table>
       <TableHeader>
         <TableRow className="text-sm">
-          <TableHead></TableHead>
+          <TableHead />
           {reportingMonths.map((month, index) => {
             return (
               <ReportingMonthTableHead

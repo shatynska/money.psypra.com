@@ -8,7 +8,7 @@ import { Skeleton } from '~/shared/ui';
 export function CashBalance() {
   const { data: cashBalance } = useCashBooksControllerGetCashBalance();
 
-  //TODO Add error boundary fallback
+  // TODO Add error boundary fallback
 
   return (
     <section className="absolute right-0 flex h-32 w-32 flex-col items-center justify-center bg-foreground font-semibold text-background">

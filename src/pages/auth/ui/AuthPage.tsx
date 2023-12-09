@@ -23,6 +23,7 @@ export function AuthPage() {
     }
   }
 
+  // eslint-disable-next-line no-empty-function
   async function loginHandler() {}
 
   return (
@@ -43,11 +44,11 @@ export function AuthPage() {
       </form>
 
       {isLogin ? (
-        <button onClick={() => setIsLogin(!isLogin)}>
+        <button type="button" onClick={() => setIsLogin(!isLogin)}>
           Не маєте акаунту? Зареєструватися
         </button>
       ) : (
-        <button onClick={() => setIsLogin(!isLogin)}>
+        <button type="button" onClick={() => setIsLogin(!isLogin)}>
           Маєте акаунт? Увійти
         </button>
       )}

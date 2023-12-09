@@ -10,6 +10,4 @@ export const UsersService = {
     );
     return data;
   },
-  async login() {},
-  async getMe() {},
 };
