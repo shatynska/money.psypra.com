@@ -6,6 +6,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
     'airbnb',
+    'airbnb-typescript',
     'plugin:@typescript-eslint/recommended',
     '@feature-sliced',
     '@feature-sliced/eslint-config/rules/import-order/experimental',
@@ -16,10 +17,21 @@ module.exports = {
   ignorePatterns: [
     'build',
     '.eslintrc.cjs',
+    'tailwind.config.ts',
+    'vite.config.ts',
+    'vitest.config.ts',
     'src/shared/api/generated',
     'notes',
   ],
   parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 'Latest',
+    sourceType: 'module',
+    project: './tsconfig.json',
+  },
   settings: {
     'import/resolver': {
       typescript: {

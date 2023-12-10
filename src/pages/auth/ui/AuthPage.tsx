@@ -23,7 +23,7 @@ export function AuthPage() {
     }
   }
 
-  // eslint-disable-next-line no-empty-function
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   async function loginHandler() {}
 
   return (
