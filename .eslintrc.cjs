@@ -20,6 +20,8 @@ module.exports = {
     'tailwind.config.ts',
     'vite.config.ts',
     'vitest.config.ts',
+    'kubb.config.js',
+    'postcss.config.js',
     'src/shared/api/generated',
     'notes',
   ],
