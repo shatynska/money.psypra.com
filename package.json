@@ -98,9 +98,9 @@
     "tailwindcss": "^3.3.5",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5",
+    "vite": "^5.0.8",
     "vite-plugin-node-polyfills": "^0.16.0",
-    "vitest": "^0.34.6"
+    "vitest": "^1.0.4"
   },
   "msw": {
     "workerDirectory": "public"
