@@ -11,6 +11,7 @@ export default defineConfig({
   },
   output: {
     path: './src/shared/api/generated',
+    clean: true,
   },
   hooks: {
     done: ['prettier --write "**/*.{ts,tsx}"'],
@@ -18,23 +19,29 @@ export default defineConfig({
   plugins: [
     createSwagger({ output: false, validate: true }),
     createSwaggerTS({
-      output: 'models',
-      groupBy: {
+      output: {
+        path: './models',
+      },
+      group: {
         type: 'tag',
       },
       enumType: 'asPascalConst',
       dateType: 'date',
     }),
     createSwaggerTanstackQuery({
-      output: './hooks',
-      groupBy: { type: 'tag' },
-      client: './src/shared/api/client.ts',
+      output: {
+        path: './hooks',
+      },
+      group: { type: 'tag' },
+      client: { importPath: '../../../client' },
       framework: 'react',
-      // TODO Check readiness of suspense option for v.5
+      suspense: true,
     }),
     createSwaggerZod({
-      output: './zod',
-      groupBy: { type: 'tag' },
+      output: {
+        path: './zod',
+      },
+      group: { type: 'tag' },
     }),
   ],
 });
