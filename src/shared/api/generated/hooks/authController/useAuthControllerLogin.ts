@@ -1,10 +1,5 @@
-import type {
-  UseMutationOptions,
-  UseMutationResult,
-} from '@tanstack/react-query';
-import { useMutation } from '@tanstack/react-query';
 import client from '../../../client';
-import type { ResponseConfig } from '../../../client';
+import { useMutation } from '@tanstack/react-query';
 import type {
   AuthControllerLoginMutationRequest,
   AuthControllerLoginMutationResponse,
@@ -12,37 +7,68 @@ import type {
   AuthControllerLogin400,
   AuthControllerLogin401,
 } from '../../models/authController/AuthControllerLogin';
+import type {
+  UseMutationOptions,
+  UseMutationResult,
+} from '@tanstack/react-query';
 
-/**
- * @summary Login user
- * @link /api/auth/login
- */
-
-export function useAuthControllerLogin<
-  TData = AuthControllerLoginMutationResponse,
-  TError =
+type AuthControllerLoginClient = typeof client<
+  AuthControllerLoginMutationResponse,
+  AuthControllerLogin201 | AuthControllerLogin400 | AuthControllerLogin401,
+  AuthControllerLoginMutationRequest
+>;
+type AuthControllerLogin = {
+  data: AuthControllerLoginMutationResponse;
+  error:
     | AuthControllerLogin201
     | AuthControllerLogin400
-    | AuthControllerLogin401,
-  TVariables = AuthControllerLoginMutationRequest,
->(
+    | AuthControllerLogin401;
+  request: AuthControllerLoginMutationRequest;
+  pathParams: never;
+  queryParams: never;
+  headerParams: never;
+  response: AuthControllerLoginMutationResponse;
+  client: {
+    paramaters: Partial<Parameters<AuthControllerLoginClient>[0]>;
+    return: Awaited<ReturnType<AuthControllerLoginClient>>;
+  };
+};
+/**
+ * @summary Login user
+ * @link /api/auth/login */
+export function useAuthControllerLogin(
   options: {
-    mutation?: UseMutationOptions<ResponseConfig<TData>, TError, TVariables>;
-    client?: Partial<Parameters<typeof client<TData, TError, TVariables>>[0]>;
+    mutation?: UseMutationOptions<
+      AuthControllerLogin['response'],
+      AuthControllerLogin['error'],
+      AuthControllerLogin['request']
+    >;
+    client?: AuthControllerLogin['client']['paramaters'];
   } = {},
-): UseMutationResult<ResponseConfig<TData>, TError, TVariables> {
+): UseMutationResult<
+  AuthControllerLogin['response'],
+  AuthControllerLogin['error'],
+  AuthControllerLogin['request']
+> {
   const { mutation: mutationOptions, client: clientOptions = {} } =
     options ?? {};
-
-  return useMutation<ResponseConfig<TData>, TError, TVariables>({
-    mutationFn: (data) => {
-      return client<TData, TError, TVariables>({
+  return useMutation<
+    AuthControllerLogin['response'],
+    AuthControllerLogin['error'],
+    AuthControllerLogin['request']
+  >({
+    mutationFn: async (data) => {
+      const res = await client<
+        AuthControllerLogin['data'],
+        AuthControllerLogin['error'],
+        AuthControllerLogin['request']
+      >({
         method: 'post',
         url: `/api/auth/login`,
         data,
-
         ...clientOptions,
       });
+      return res.data;
     },
     ...mutationOptions,
   });

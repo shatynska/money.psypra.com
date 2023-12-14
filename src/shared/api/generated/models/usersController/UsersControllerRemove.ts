@@ -6,3 +6,7 @@ export type UsersControllerRemovePathParams = {
    */
   id: string;
 };
+export namespace UsersControllerRemoveMutation {
+  export type Response = UsersControllerRemoveMutationResponse;
+  export type PathParams = UsersControllerRemovePathParams;
+}

@@ -6,3 +6,7 @@ export type AuthControllerSuccessGoogleQueryParams = {
 };
 
 export type AuthControllerSuccessGoogleQueryResponse = any | null;
+export namespace AuthControllerSuccessGoogleQuery {
+  export type Response = AuthControllerSuccessGoogleQueryResponse;
+  export type QueryParams = AuthControllerSuccessGoogleQueryParams;
+}

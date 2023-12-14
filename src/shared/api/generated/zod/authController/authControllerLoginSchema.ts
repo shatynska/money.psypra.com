@@ -1,10 +1,9 @@
 import { z } from 'zod';
-
 import { loginResponseDtoSchema } from '../loginResponseDtoSchema';
 import { loginDtoSchema } from '../loginDtoSchema';
 
-export const authControllerLogin400Schema = z.any();
-export const authControllerLogin401Schema = z.any();
+export const authControllerLogin400Schema = '';
+export const authControllerLogin401Schema = '';
 export const authControllerLogin201Schema = z.lazy(
   () => loginResponseDtoSchema,
 ).schema;

@@ -1,3 +1,3 @@
-export * as usersHooks from './usersController';
-export * as cashBooksHooks from './cashBooksController';
-export * as authHooks from './authController';
+export * as usersHooks from './usersController/index';
+export * as cashBooksHooks from './cashBooksController/index';
+export * as authHooks from './authController/index';

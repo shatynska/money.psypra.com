@@ -8,3 +8,7 @@ export type UsersControllerFindOnePathParams = {
 };
 
 export type UsersControllerFindOneQueryResponse = UserResponseDto;
+export namespace UsersControllerFindOneQuery {
+  export type Response = UsersControllerFindOneQueryResponse;
+  export type PathParams = UsersControllerFindOnePathParams;
+}

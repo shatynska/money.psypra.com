@@ -1,6 +1,5 @@
-import { z } from 'zod';
-
 import { membershipFeeSchema } from './membershipFeeSchema';
+import { z } from 'zod';
 
 export const memberWithMembershipFeesSchema = z.object({
   lastName: z.string(),

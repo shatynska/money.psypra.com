@@ -1,5 +1,4 @@
 import { z } from 'zod';
-
 import { userResponseDtoSchema } from '../userResponseDtoSchema';
 
 export const usersControllerFindOnePathParamsSchema = z.object({
