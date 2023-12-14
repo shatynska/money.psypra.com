@@ -24,6 +24,7 @@ module.exports = {
     'postcss.config.js',
     'src/shared/api/generated',
     'notes',
+    'public/mockServiceWorker.js',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {

@@ -4,7 +4,7 @@
  */
 /* eslint-disable */
 /* tslint:disable */
-import { rest, setupWorker } from 'msw';
+import { HttpResponse, http } from 'msw';
 
 const baseURL = 'https://dro.psypra.com';
 const MAX_ARRAY_LENGTH = 20;
@@ -18,96 +18,102 @@ const next = () => {
 };
 
 export const handlers = [
-  rest.get(`${baseURL}/api/users/:idOrEmail`, (_, res, ctx) => {
+  http.get(`${baseURL}/api/users/:idOrEmail`, () => {
     const resultArray = [
-      [ctx.status(200), ctx.json(getUsersControllerFindOne200Response())],
+      [getUsersControllerFindOne200Response(), { status: 200 }],
     ];
 
-    return res(...resultArray[next() % resultArray.length]);
+    return HttpResponse.json(...resultArray[next() % resultArray.length]);
   }),
-  rest.delete(`${baseURL}/api/users/:id`, (_, res, ctx) => {
-    const resultArray = [[ctx.status(200), ctx.json(null)]];
+  http.delete(`${baseURL}/api/users/:id`, () => {
+    const resultArray = [[null, { status: 200 }]];
 
-    return res(...resultArray[next() % resultArray.length]);
+    return HttpResponse.json(...resultArray[next() % resultArray.length]);
   }),
-  rest.get(`${baseURL}/api/users`, (_, res, ctx) => {
+  http.get(`${baseURL}/api/users`, () => {
+    const resultArray = [[getUsersControllerMe200Response(), { status: 200 }]];
+
+    return HttpResponse.json(...resultArray[next() % resultArray.length]);
+  }),
+  http.put(`${baseURL}/api/users`, () => {
     const resultArray = [
-      [ctx.status(200), ctx.json(getUsersControllerMe200Response())],
+      [getUsersControllerUpdateUser200Response(), { status: 200 }],
     ];
 
-    return res(...resultArray[next() % resultArray.length]);
+    return HttpResponse.json(...resultArray[next() % resultArray.length]);
   }),
-  rest.put(`${baseURL}/api/users`, (_, res, ctx) => {
+  http.get(`${baseURL}/api/cash-books/cash-balance`, () => {
     const resultArray = [
-      [ctx.status(200), ctx.json(getUsersControllerUpdateUser200Response())],
+      [getCashBooksControllerGetCashBalance200Response(), { status: 200 }],
     ];
 
-    return res(...resultArray[next() % resultArray.length]);
+    return HttpResponse.json(...resultArray[next() % resultArray.length]);
   }),
-  rest.get(`${baseURL}/api/cash-books/cash-balance`, (_, res, ctx) => {
+  http.get(`${baseURL}/api/cash-books/current`, () => {
     const resultArray = [
-      [
-        ctx.status(200),
-        ctx.json(getCashBooksControllerGetCashBalance200Response()),
-      ],
+      [getCashBooksControllerGetCurrentCashBooks200Response(), { status: 200 }],
     ];
 
-    return res(...resultArray[next() % resultArray.length]);
+    return HttpResponse.json(...resultArray[next() % resultArray.length]);
   }),
-  rest.get(`${baseURL}/api/cash-books/current`, (_, res, ctx) => {
+  http.get(`${baseURL}/api/cash-books`, () => {
     const resultArray = [
-      [
-        ctx.status(200),
-        ctx.json(getCashBooksControllerGetCurrentCashBooks200Response()),
-      ],
+      [getCashBooksControllerFindAllCashBooks200Response(), { status: 200 }],
     ];
 
-    return res(...resultArray[next() % resultArray.length]);
+    return HttpResponse.json(...resultArray[next() % resultArray.length]);
   }),
-  rest.post(`${baseURL}/api/auth/register`, (_, res, ctx) => {
+  http.get(`${baseURL}/api/cash-books/:id`, () => {
     const resultArray = [
-      [ctx.status(201), ctx.json(getAuthControllerRegister201Response())],
+      [getCashBooksControllerFindCashBookById200Response(), { status: 200 }],
     ];
 
-    return res(...resultArray[next() % resultArray.length]);
+    return HttpResponse.json(...resultArray[next() % resultArray.length]);
   }),
-  rest.post(`${baseURL}/api/auth/login`, (_, res, ctx) => {
+  http.post(`${baseURL}/api/auth/register`, () => {
     const resultArray = [
-      [ctx.status(201), ctx.json(getAuthControllerLogin201Response())],
+      [getAuthControllerRegister201Response(), { status: 201 }],
     ];
 
-    return res(...resultArray[next() % resultArray.length]);
+    return HttpResponse.json(...resultArray[next() % resultArray.length]);
   }),
-  rest.get(`${baseURL}/api/auth/logout`, (_, res, ctx) => {
-    const resultArray = [[ctx.status(200), ctx.json(null)]];
+  http.post(`${baseURL}/api/auth/login`, () => {
+    const resultArray = [
+      [getAuthControllerLogin201Response(), { status: 201 }],
+    ];
 
-    return res(...resultArray[next() % resultArray.length]);
+    return HttpResponse.json(...resultArray[next() % resultArray.length]);
   }),
-  rest.get(`${baseURL}/api/auth/refresh-tokens`, (_, res, ctx) => {
-    const resultArray = [[ctx.status(200), ctx.json(null)]];
+  http.get(`${baseURL}/api/auth/logout`, () => {
+    const resultArray = [[null, { status: 200 }]];
 
-    return res(...resultArray[next() % resultArray.length]);
+    return HttpResponse.json(...resultArray[next() % resultArray.length]);
   }),
-  rest.get(`${baseURL}/api/auth/google`, (_, res, ctx) => {
-    const resultArray = [[ctx.status(200), ctx.json(null)]];
+  http.get(`${baseURL}/api/auth/refresh-tokens`, () => {
+    const resultArray = [[null, { status: 200 }]];
 
-    return res(...resultArray[next() % resultArray.length]);
+    return HttpResponse.json(...resultArray[next() % resultArray.length]);
   }),
-  rest.get(`${baseURL}/api/auth/google/callback`, (_, res, ctx) => {
-    const resultArray = [[ctx.status(200), ctx.json(null)]];
+  http.get(`${baseURL}/api/auth/google`, () => {
+    const resultArray = [[null, { status: 200 }]];
 
-    return res(...resultArray[next() % resultArray.length]);
+    return HttpResponse.json(...resultArray[next() % resultArray.length]);
   }),
-  rest.get(`${baseURL}/api/auth/success-google`, (_, res, ctx) => {
-    const resultArray = [[ctx.status(200), ctx.json(null)]];
+  http.get(`${baseURL}/api/auth/google/callback`, () => {
+    const resultArray = [[null, { status: 200 }]];
 
-    return res(...resultArray[next() % resultArray.length]);
+    return HttpResponse.json(...resultArray[next() % resultArray.length]);
+  }),
+  http.get(`${baseURL}/api/auth/success-google`, () => {
+    const resultArray = [[null, { status: 200 }]];
+
+    return HttpResponse.json(...resultArray[next() % resultArray.length]);
   }),
 ];
 
 export function getUsersControllerFindOne200Response() {
   return {
-    id: 'c0298617-9f36-489e-ba72-d462777987e9',
+    id: 'c0377617-9f36-489e-ba72-d462777987e9',
     email: 'test@gmail.com',
     roles: ['USER'],
   };
@@ -119,7 +125,7 @@ export function getUsersControllerMe200Response() {
 
 export function getUsersControllerUpdateUser200Response() {
   return {
-    id: 'c0298617-9f36-489e-ba72-d462777987e9',
+    id: 'c0377617-9f36-489e-ba72-d462777987e9',
     email: 'test@gmail.com',
     roles: ['USER'],
   };
@@ -153,9 +159,25 @@ export function getCashBooksControllerGetCurrentCashBooks200Response() {
   };
 }
 
+export function getCashBooksControllerFindAllCashBooks200Response() {
+  return {
+    cashBooks: [1].map((_) => ({
+      id: 'c0287617-9f36-489e-ba72-d462777987e9',
+      title: 2022,
+    })),
+  };
+}
+
+export function getCashBooksControllerFindCashBookById200Response() {
+  return {
+    id: 'c0287617-9f36-489e-ba72-d462777987e9',
+    title: 2022,
+  };
+}
+
 export function getAuthControllerRegister201Response() {
   return {
-    id: 'c0298617-9f36-489e-ba72-d462777987e9',
+    id: 'c0377617-9f36-489e-ba72-d462777987e9',
     email: 'test@gmail.com',
     roles: ['USER'],
   };
@@ -167,9 +189,3 @@ export function getAuthControllerLogin201Response() {
       'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjMjg3NjE3LTlmMzYtNDg5ZS1iYTcyLWQ0NjI3Nzc5ODdlOSIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iXSwiaWF0IjoxNjk1OTI4NTc5LCJleHAiOjE2OTYwMTQ5Nzl9.VblvTacY29lbiE_IZl2bb6itQ8mCsgf4TZrk2bmdXnU',
   };
 }
-
-// This configures a Service Worker with the given request handlers.
-export const startWorker = () => {
-  const worker = setupWorker(...handlers);
-  worker.start();
-};

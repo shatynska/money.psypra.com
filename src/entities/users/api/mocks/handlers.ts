@@ -1,29 +1,27 @@
-import { rest } from 'msw';
+import { HttpResponse, http } from 'msw';
 
 export const UsersHandlers = [
-  rest.post('/login', (_req, res, ctx) => {
+  http.post('/login', () => {
     sessionStorage.setItem('is-authenticated', 'true');
 
-    return res(ctx.status(200));
+    return HttpResponse.json({ status: 200 });
   }),
 
-  rest.get('/user', (_req, res, ctx) => {
+  http.get('/user', () => {
     const isAuthenticated = sessionStorage.getItem('is-authenticated');
 
     if (!isAuthenticated) {
-      return res(
-        ctx.status(403),
-        ctx.json({
-          errorMessage: 'Not authorized',
-        }),
-      );
+      return HttpResponse.json(null, {
+        status: 403,
+        statusText: 'Not authorized',
+      });
     }
 
-    return res(
-      ctx.status(200),
-      ctx.json({
+    return HttpResponse.json(
+      {
         username: 'admin',
-      }),
+      },
+      { status: 200 },
     );
   }),
 ];
