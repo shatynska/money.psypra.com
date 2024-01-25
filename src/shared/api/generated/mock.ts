@@ -42,10 +42,8 @@ export const handlers = [
 
     return HttpResponse.json(...resultArray[next() % resultArray.length]);
   }),
-  http.get(`${baseURL}/api/cash-books/cash-balance`, () => {
-    const resultArray = [
-      [getCashBooksControllerGetCashBalance200Response(), { status: 200 }],
-    ];
+  http.post(`${baseURL}/api/cash-books/:id/reporting-periods`, () => {
+    const resultArray = [[null, { status: 201 }]];
 
     return HttpResponse.json(...resultArray[next() % resultArray.length]);
   }),
@@ -56,16 +54,14 @@ export const handlers = [
 
     return HttpResponse.json(...resultArray[next() % resultArray.length]);
   }),
-  http.get(`${baseURL}/api/cash-books`, () => {
-    const resultArray = [
-      [getCashBooksControllerFindAllCashBooks200Response(), { status: 200 }],
-    ];
+  http.post(`${baseURL}/api/cash-books`, () => {
+    const resultArray = [[null, { status: 201 }]];
 
     return HttpResponse.json(...resultArray[next() % resultArray.length]);
   }),
-  http.get(`${baseURL}/api/cash-books/:id`, () => {
+  http.get(`${baseURL}/api/cash-books/:id/cash-balance`, () => {
     const resultArray = [
-      [getCashBooksControllerFindCashBookById200Response(), { status: 200 }],
+      [getGetCashBalanceControllerGetCashBalance200Response(), { status: 200 }],
     ];
 
     return HttpResponse.json(...resultArray[next() % resultArray.length]);
@@ -131,12 +127,6 @@ export function getUsersControllerUpdateUser200Response() {
   };
 }
 
-export function getCashBooksControllerGetCashBalance200Response() {
-  return {
-    value: 8420,
-  };
-}
-
 export function getCashBooksControllerGetCurrentCashBooks200Response() {
   return {
     reportingMonths: [2, 3, 4, 5, 7, 8, 9, 10, 11],
@@ -159,19 +149,9 @@ export function getCashBooksControllerGetCurrentCashBooks200Response() {
   };
 }
 
-export function getCashBooksControllerFindAllCashBooks200Response() {
+export function getGetCashBalanceControllerGetCashBalance200Response() {
   return {
-    cashBooks: [1].map((_) => ({
-      id: 'c0287617-9f36-489e-ba72-d462777987e9',
-      title: 2022,
-    })),
-  };
-}
-
-export function getCashBooksControllerFindCashBookById200Response() {
-  return {
-    id: 'c0287617-9f36-489e-ba72-d462777987e9',
-    title: 2022,
+    value: 8420,
   };
 }
 

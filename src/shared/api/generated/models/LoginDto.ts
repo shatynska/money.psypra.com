@@ -5,8 +5,8 @@ export type LoginDto = {
    */
   email: string;
   /**
-   * @type string | undefined
+   * @type string
    * @example secret_password
    */
-  password?: string | null;
+  password: string;
 };

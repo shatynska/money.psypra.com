@@ -5,10 +5,10 @@ export type RegisterDto = {
    */
   email: string;
   /**
-   * @type string | undefined
+   * @type string
    * @example secret_password
    */
-  password?: string | null;
+  password: string;
   /**
    * @type string
    * @example secret_password

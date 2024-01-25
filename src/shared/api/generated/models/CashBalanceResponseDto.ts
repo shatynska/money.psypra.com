@@ -1,6 +1,6 @@
 export type CashBalanceResponseDto = {
   /**
-   * @type integer int32
+   * @type number
    * @example 8420
    */
   value: number;
