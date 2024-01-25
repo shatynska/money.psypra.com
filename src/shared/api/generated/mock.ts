@@ -151,7 +151,7 @@ export function getCashBooksControllerGetCurrentCashBooks200Response() {
 
 export function getGetCashBalanceControllerGetCashBalance200Response() {
   return {
-    value: 8420,
+    value: 842000,
   };
 }
 
