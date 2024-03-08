@@ -19,7 +19,7 @@ export function CashBalance() {
       <ErrorBoundary fallback={null}>
         <Suspense fallback={<Skeleton />}>
           <div className="text-[32px] ">
-            {Number(cashBalance?.value) * 0.01}
+            {cashBalance && Number(cashBalance.value) * 0.01}
           </div>
         </Suspense>
       </ErrorBoundary>
