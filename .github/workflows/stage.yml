@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 20.10.0
 
@@ -37,28 +37,28 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Make envfile
-        uses: SpicyPizza/create-envfile@v2.0
+        uses: SpicyPizza/create-envfile@v2
         with:
           envkey_VITE_API_BASE_URL: 'https://dro.psypra.com'
           envkey_VITE_API_WITH_MSW: true
 
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
+        uses: docker/setup-qemu-action@v3
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
 
       - name: Login to Docker Hub
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
       - name: Build and push to Docker Hub
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v5
         with:
           context: .
           push: true
@@ -71,14 +71,14 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Redeploy stack
-        uses: luminos-company/portami@v1.1
+        uses: luminos-company/portami@v1.2
         with:
           endpoint: 'https://admin.psypra.com'
           access_token: ${{ secrets.PORTAINER_ACCESS_TOKEN }}
-          stack_id: 'money_psypra_com_blue'
+          stack_name: 'money_psypra_com_blue'
           file_path: '.github/stack/blue.yml'
           prune: true
           pull: true
